@@ -4,9 +4,11 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('home.index');
+// });
+
+route::get('/',[HomeController::class,'home']);
 
 route::get('admin/dashboard', [HomeController::class, 'index'])
 ->middleware(['auth','admin']);
